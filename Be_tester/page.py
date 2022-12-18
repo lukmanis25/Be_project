@@ -1,12 +1,19 @@
 from element import BasePageElement
 from locators import MainPageLocators
 from locators import ZalogujSiePageLocators
+from locators import StworzKontoPageLocators
 
-class SearchTextElement(BasePageElement):
-    """This class gets the search text from the specified locator"""
+class PodajImieElement(BasePageElement):
+    locator = 'firstname'
 
-    #The locator for search box where search string is entered
-    locator = 'q'
+class PodajNazwiskoElement(BasePageElement):
+    locator = 'lastname'
+
+class PodajEmailElement(BasePageElement):
+    locator = 'email'
+
+class PodajHasloElement(BasePageElement):
+    locator = 'password'
 
 
 class BasePage(object):
@@ -20,8 +27,6 @@ class BasePage(object):
 class MainPage(BasePage):
     """Home page action methods come here. I.e. Python.org"""
 
-    #Declares a variable that will contain the retrieved text
-    search_text_element = SearchTextElement()
 
     def is_title_matches(self):
         #Wartosc z head -> title
@@ -42,6 +47,30 @@ class ZalogujSiePage(BasePage):
         element.click()
 
 class StworzKontoPage(BasePage):
+
+    podaj_imie_element = PodajImieElement()
+    podaj_nazwisko_element = PodajNazwiskoElement()
+    podaj_email_element = PodajEmailElement()
+    podaj_haslo_element = PodajHasloElement()
+
     def is_title_matches(self):
         # Wartosc z head -> title
         return "Nazwa użytkowika" in self.driver.title
+
+    def click_pan_option(self):
+        element = self.driver.find_element(*StworzKontoPageLocators.PAN_OPTION)
+        element.click()
+
+    def click_checkbox1(self):
+        element = self.driver.find_element(*StworzKontoPageLocators.CHECKBOX1)
+        element.click()
+
+    def click_checkbox2(self):
+        element = self.driver.find_element(*StworzKontoPageLocators.CHECKBOX2)
+        element.click()
+
+    def click_zapisz_button(self):
+        element = self.driver.find_element(*StworzKontoPageLocators.ZAPISZ_BUTTON)
+        element.click()
+
+
