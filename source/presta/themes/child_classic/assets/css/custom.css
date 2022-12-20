@@ -1,0 +1,22 @@
+/*
+ * Custom code goes here.
+ * A template should always ship with an empty custom.css
+ */
+ #header{ background: #808080 !important; }
+ #wrapper { background: #eee8aa; }
+ #container { width: 1920px; 
+ background: #eee8aa;}
+ #content-wrapper {
+	 /*width: 1920px;
+	 margin-right: 200px;*/
+	 background: #eee8aa;
+ }
+ 
+ #carousel {
+	 background: green;
+ }
+ 
+ #custom-text{ background: #000080; }
+ 
+#footer { background: #b0e0e6 !important; color:white !important;}
+#footer-container {background: #8a2be2 !important; color:white !important;}
