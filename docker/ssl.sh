@@ -11,7 +11,6 @@ cp /ssl/apache-selfsigned.key /etc/ssl/private/apache-selfsigned.key
 cp /ssl/apache-selfsigned.crt /etc/ssl/certs/apache-selfsigned.crt
 
 a2enmod ssl
-a2enmod rewrite
 service apache2 restart
 
 apachectl -D FOREGROUND
