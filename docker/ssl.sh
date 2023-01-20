@@ -1,5 +1,5 @@
 #!/bin/bash
-find themes/etrendlite/mails -type f -exec sed -i "s/localhost/localhost/" {} \;
+# find themes/etrendlite/mails -type f -exec sed -i "s/localhost/localhost/" {} \;
 cd ssl
 touch apache-selfsigned.key
 touch apache-selfsigned.crt
