@@ -3,7 +3,7 @@ apt-get install openssl
 
 a2enmod ssl
 a2enmod rewrite
-service restart apache2
+service apache2 restart 
 
 mkdir /etc/apache2/certificate
 cd /etc/apache2/certificate
@@ -15,4 +15,4 @@ cp /ssl/default-ssl.conf /etc/apache2/sites-available/default-ssl.conf
 a2enmod ssl
 a2enmod headers
 a2ensite default-ssl
-service restart apache2
+service apache2 restart
